@@ -2,11 +2,12 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ProgressBarPlugin from 'progress-bar-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import { join } from 'path'
 
-import { Configuration } from 'webpack'
-
 import paths from './paths'
+
+import type { Configuration } from 'webpack'
 
 const ctx = {
   isEnvDevelopment: process.env.NODE_ENV === 'development',
@@ -64,6 +65,7 @@ const common: Configuration = {
     plugins: [PnpWebpackPlugin.moduleLoader(module)]
   },
   plugins: [
+    new CleanWebpackPlugin(),
     // 生成html，自动引入所有bundle
     new HtmlWebpackPlugin({
       title: 'release_v1'

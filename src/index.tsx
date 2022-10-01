@@ -1,13 +1,11 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import { Hello } from './hello'
 
 function Index() {
   console.log('index')
   return (
     <div className="index">
-      <p>hello index</p>
-      <Hello />
+      <p>hello webpack</p>
     </div>
   )
 }
