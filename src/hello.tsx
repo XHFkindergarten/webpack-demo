@@ -1,8 +1,5 @@
-import './assets/style.css'
+import React from 'react'
 
-export function Hello () {
-    return (
-        <div className='hello'>hello webpack</div>
-    )
+export function Hello() {
+  return <div className="hello">hello webpack</div>
 }
-
